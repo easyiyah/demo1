@@ -1,0 +1,102 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.wrapper li{
+	margin: 20px;
+	height: 200px;
+	width: 200px;
+	position: relative;
+	transform-style: preserve-3d;
+	perspective: 400px;
+}
+.wrapper li .box{
+	position: relative;
+	transform-origin: 100px 100px -100px;
+	transform-style: preserve-3d;
+}
+
+.pic-1{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	background: url('./1.jpg');
+	background-size: cover;
+	transform-origin:0% 100% -100px;
+}
+.pic-2{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	background: url('./2.jpg');
+	background-size: cover;
+	transform-origin:0% 100% -100px;
+}
+.wrapper .text{
+	width: 200px;
+	height: 200px;
+	background-color: black;
+	color: #fff;
+	position: absolute;
+	transform-origin:center center -100px;
+	transform: translateZ(-1px)
+}
+.to-top .text{
+	transform:rotateX(90deg);
+}
+.to-top .box{
+	animation:top 600ms 1 ease-in-out forwards;
+}
+@keyframes top{
+	from{
+		transform: rotateX(0deg);
+	}
+	to{
+		transform: rotateX(-90deg);
+	}
+}
+@keyframes bottom{
+	from{
+		transform: rotateX(0deg);
+	}
+	to{
+		transform: rotateX(90deg);
+	}
+}
+.to-bottom .box{
+	animation:bottom 600ms 1 ease-in-out forwards;
+}
+.to-bottom .text{
+	transform:rotateX(-90deg);
+}
+
+.to-right .text{
+	transform:rotateY(-90deg);
+}
+.to-right .box{
+	animation:right 600ms 1 ease-in-out forwards;
+}
+
+@keyframes right{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(90deg);
+	}
+}
+@keyframes left{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(-90deg);
+	}
+}
+.to-left .text{
+	transform:rotateY(90deg);
+}
+.to-left .box{
+	animation:left 600ms 1 ease-in-out forwards;
+}
